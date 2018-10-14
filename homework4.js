@@ -1,4 +1,30 @@
 //2
+const char = function(n,c){
+	let i = 0;
+	let str = "";
+	while(i < n){
+		str += c;
+		i++;
+	}
+	return str;
+};
+
+const row = function(m,n){
+	console.log(char(m, " ") + char(n, "*"));
+};
+
+const triangleStars = function(h){
+	let i = 0;
+	let spaceCount = 0;
+	let starCount = 2*h-1;
+	while(i < h){
+		row(spaceCount, starCount);
+		spaceCount++;
+		starCount -= 2;
+		i++;
+	}
+};
+/*
 const triangleStars = function(n){
 	let spaceNum = 0;
 	let starsNum = 2*n -1;
@@ -18,7 +44,7 @@ const triangleStars = function(n){
 		starsNum -= 2;
 		console.log(line);
 	}
-};
+};*/
 
 triangleStars(7);
 
@@ -106,6 +132,18 @@ console.log(reverse("abcd"));
 const checkerboard = function(n){
 	let i = 0;
 	while(i < n){
+		if(i%2 === 0){
+			console.log(char(n,"* "));
+		}else{
+			console.log(char(n, " *"));
+		}
+		i++;
+	}
+};
+
+/*const checkerboard = function(n){
+	let i = 0;
+	while(i < n){
 		let line = "";
 		let j = 0;
 		while(j < 2*n){
@@ -127,6 +165,6 @@ const checkerboard = function(n){
 		i++;
 		console.log(line);
 	}
-};
+};*/
 
 checkerboard(5);
